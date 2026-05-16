@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atharva Singh | Salesforce Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#020617;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#2563eb;
+      filter:blur(180px);
+      top:-100px;
+      left:-100px;
+      opacity:0.4;
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:400px;
+      height:400px;
+      background:#7c3aed;
+      filter:blur(180px);
+      bottom:-100px;
+      right:-100px;
+      opacity:0.4;
+      z-index:-1;
+    }
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      padding:22px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      background:rgba(2,6,23,0.7);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav h2{
+      font-size:28px;
+      font-weight:700;
+      background:linear-gradient(to right,#38bdf8,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav ul{
+      display:flex;
+      gap:35px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 10%;
+      flex-wrap:wrap;
+      gap:50px;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:320px;
+    }
+
+    .hero-text h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      background:linear-gradient(to right,#38bdf8,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .typing{
+      font-size:30px;
+      color:#cbd5e1;
+      margin-bottom:25px;
+      min-height:45px;
+    }
+
+    .hero-text p{
+      color:#94a3b8;
+      line-height:2;
+      max-width:700px;
+      margin-bottom:35px;
+      font-size:16px;
+    }
+
+    .btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 32px;
+      border-radius:15px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .btn-primary{
+      background:linear-gradient(to right,#2563eb,#7c3aed);
+      color:white;
+      box-shadow:0 0 25px rgba(37,99,235,0.4);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.2);
+      color:white;
+      backdrop-filter:blur(10px);
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+    }
+
+    .hero-card{
+      width:360px;
+      padding:35px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 40px rgba(56,189,248,0.15);
+    }
+
+    .hero-card h3{
+      margin-bottom:25px;
+      color:#38bdf8;
+      font-size:26px;
+    }
+
+    .hero-card p{
+      margin:18px 0;
+      color:#cbd5e1;
+      font-size:16px;
+    }
+
+    section{
+      padding:120px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:50px;
+      margin-bottom:70px;
+      background:linear-gradient(to right,#38bdf8,#8b5cf6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .about{
+      text-align:center;
+    }
+
+    .about p{
+      max-width:950px;
+      margin:auto;
+      line-height:2.2;
+      color:#cbd5e1;
+      font-size:17px;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .skill-card{
+      padding:35px;
+      border-radius:25px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 30px rgba(56,189,248,0.15);
+    }
+
+    .skill-card h3{
+      margin-bottom:20px;
+      color:#38bdf8;
+      font-size:24px;
+    }
+
+    .skill-card p{
+      line-height:2;
+      color:#cbd5e1;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .project-card{
+      padding:35px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 30px rgba(56,189,248,0.15);
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:20px;
+      font-size:28px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      line-height:2;
+    }
+
+    .certifications{
+      text-align:center;
+    }
+
+    .certifications ul{
+      list-style:none;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .certifications li{
+      margin:20px 0;
+      padding:20px;
+      border-radius:15px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#cbd5e1;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact-box{
+      max-width:800px;
+      margin:auto;
+      padding:50px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+    }
+
+    .contact p{
+      margin:20px 0;
+      font-size:18px;
+      color:#cbd5e1;
+    }
+
+    footer{
+      text-align:center;
+      padding:35px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#94a3b8;
+    }
+
+    @media(max-width:900px){
+
+      .hero{
+        padding-top:120px;
+      }
+
+      .hero-text h1{
+        font-size:50px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav ul{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+
+    <h2>Atharva Singh</h2>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-text">
+
+      <h1>
+        Hi, I'm <span>Atharva Singh</span>
+      </h1>
+
+      <div class="typing">
+        <span id="typed"></span>
+      </div>
+
+      <p>
+        Final-year B.Tech CS(AI) student passionate about Salesforce Development,
+        Python, Apex, Lightning Web Components, SOQL, and modern web technologies.
+
+        I love building scalable applications and solving real-world technical problems.
+      </p>
+
+      <div class="btns">
+
+        <a href="#projects" class="btn btn-primary">
+          View Projects
+        </a>
+
+        <a href="resume.pdf" download class="btn btn-secondary">
+          Download Resume
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <h3>Quick Overview</h3>
+
+      <p>🎓 B.Tech CSE(AI)</p>
+
+      <p>💻 Salesforce Developer</p>
+
+      <p>⚡ Apex • LWC • SOQL</p>
+
+      <p>🐍 Python Developer</p>
+
+      <p>🚀 Open to Developer Roles</p>
+
+      <p>📍 Uttar Pradesh, India</p>
+
+    </div>
+
+  </section>
+
+  <section id="about" class="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+      I am a final-year Computer Science & Engineering student specializing in Artificial Intelligence.
+      I enjoy building scalable applications using Salesforce technologies and Python.
+
+      I have worked on projects like a real-time Drowsiness Detection System using Computer Vision
+      and a Building Management System using Object-Oriented Programming concepts.
+
+      Currently focused on Python Development and Salesforce Development including Apex,
+      Lightning Web Components (LWC), SOQL, and CRM Engineering.
+    </p>
+
+  </section>
+
+  <section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>Programming</h3>
+
+        <p>
+          Python <br>
+          JavaScript <br>
+          Apex <br>
+          C
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Salesforce</h3>
+
+        <p>
+          Apex <br>
+          Lightning Web Components <br>
+          SOQL <br>
+          SOSL <br>
+          SFDX
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Web Development</h3>
+
+        <p>
+          HTML5 <br>
+          CSS3 <br>
+          Bootstrap 4 <br>
+          Responsive UI
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Tools & Platforms</h3>
+
+        <p>
+          GitHub <br>
+          VS Code <br>
+          Workbench <br>
+          Developer Console
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <h3>Drowsiness Detection System</h3>
+
+        <p>
+          Built a real-time driver drowsiness detection system using
+          facial landmark detection and OpenCV.
+
+          Implemented eye-closure monitoring with audio-visual alerts
+          for enhanced road safety and optimized low-latency video processing.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Building Management System</h3>
+
+        <p>
+          Developed a Building Management System using Python and OOP principles.
+
+          Created modules for tenant management, billing,
+          maintenance workflows, and operational management.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="certifications" class="certifications">
+
+    <h2 class="section-title">Certifications</h2>
+
+    <ul>
+
+      <li>Salesforce Agentblazer Champion Badge</li>
+
+      <li>Complete Python Programming — Udemy</li>
+
+      <li>Programming Fundamentals with Python — Infosys Springboard</li>
+
+      <li>HTML5 — Infosys Springboard</li>
+
+      <li>AWS Cloud Certification (Foundation Level) — Amazon Web Services</li>
+
+      <li>Complete Python Programming — Udemy </li>
+
+      <li>Python Demonstration for Practice — Udemy</li>
+
+    </ul>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+      <p>📧 satharva709@gmail.com</p>
+
+      <p>📱 +91 95698 44597</p>
+
+      <p>📍 Uttar Pradesh, India</p>
+
+      <p>💼 LinkedIn: linkedin.com/in/yourprofile</p>
+
+      <p>💻 GitHub: github.com/yourusername</p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 Atharva Singh | Python Developer & Salesforce Developer Portfolio
+
+  </footer>
+
+  <script>
+
+    var typed = new Typed("#typed", {
+
+      strings: [
+
+        "Salesforce Developer",
+        "Python Developer",
+        "Apex & LWC Enthusiast",
+        "Future CRM Engineer"
+
+      ],
+
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop:true
+
+    });
+
+  </script>
+
+</body>
+</html>
