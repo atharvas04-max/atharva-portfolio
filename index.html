@@ -342,7 +342,38 @@
       }
     }
 
+    html {
+       scroll-behavior: smooth;
+    }
+
+    .project-card {
+       transition: all 0.4s ease;
+    }
+
+    .project-card:hover {
+       transform: translateY(-10px);
+       box-shadow: 0 0 25px rgba(255,0,0,0.25);
+    }
+
+    button,
+    .btn {
+      transition: all 0.3s ease;
+    }
+
+    button:hover,
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,0,0,0.4);
+    }
+
+    h1, h2 {
+      text-shadow: 0 0 12px rgba(255,0,0,0.2);
+    }
+
   </style>
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
 </head>
 
 <body>
@@ -414,7 +445,7 @@
 
   </section>
 
-  <section id="about" class="about">
+  <section id="about" class="about" data-aos="fade-right">
 
     <h2 class="section-title">About Me</h2>
 
@@ -439,7 +470,7 @@
 
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-left">
 
     <h2 class="section-title">Technical Skills</h2>
 
@@ -495,7 +526,7 @@
   </section>
 
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
 
   <h2 class="section-title">Projects</h2>
 
@@ -609,7 +640,7 @@
 
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact" class="contact" data-aos="zoom-in">
 
     <h2 class="section-title">Contact Me</h2>
 
@@ -682,6 +713,15 @@
 
     });
 
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   </script>
 
 </body>
