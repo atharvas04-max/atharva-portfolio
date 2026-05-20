@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Atharva Singh | Salesforce Developer</title>
+  <title>Atharva Singh Chandra | Salesforce Developer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,32 +214,62 @@
 
     .skills-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+      margin-top:50px;
     }
 
     .skill-card{
-      padding:35px;
-      border-radius:25px;
-      background:rgba(15,15,15,0.9);
+      background:rgba(10,10,10,0.9);
       border:1px solid rgba(255,255,255,0.08);
-      transition:0.4s;
+      border-radius:28px;
+      padding:40px 35px;
+      transition:0.4s ease;
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 20px rgba(255,0,0,0.08);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .skill-card::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      right:-50%;
+      width:220px;
+      height:220px;
+      background:rgba(255,0,0,0.08);
+      border-radius:50%;
     }
 
     .skill-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 30px rgba(56,189,248,0.15);
+      transform:translateY(-10px);
+      border-color:#ff3b3b;
+      box-shadow:0 0 35px rgba(255,0,0,0.25);
     }
 
     .skill-card h3{
-      margin-bottom:20px;
-      color:#ef4444;
-      font-size:24px;
+      color:#ff4d4d;
+      font-size:2rem;
+      margin-bottom:28px;
+      font-weight:700;
+      position:relative;
+    }
+
+    .skill-card h3::after{
+      content:'';
+      display:block;
+      width:60px;
+      height:3px;
+      background:#ff3b3b;
+      margin-top:12px;
+      border-radius:10px;
     }
 
     .skill-card p{
-      line-height:2;
       color:#d1d5db;
+      line-height:2.2;
+      font-size:1.1rem;
     }
 
     .projects-grid{
@@ -380,7 +410,7 @@
 
   <nav>
 
-    <h2>Atharva Singh</h2>
+    <h2>Atharva Singh Chandra</h2>
 
     <ul>
       <li><a href="#about">About</a></li>
@@ -397,7 +427,7 @@
     <div class="hero-text">
 
       <h1>
-        Hi, I'm <span>Atharva Singh</span>
+        Hi, I'm <span>Atharva Singh Chandra</span>
       </h1>
 
       <div class="typing">
@@ -470,56 +500,50 @@
 
   </section>
 
-  <section id="skills" data-aos="fade-left">
-
+  <section id="skills" class="skills-section">
     <h2 class="section-title">Technical Skills</h2>
 
-    <div class="skills-grid">
+    <div class="skills-container">
 
-      <div class="skill-card">
-        <h3>Programming</h3>
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <p>
+              • Python <br>
+              • JavaScript <br>
+              • Apex
+            </p>
+        </div>
 
-        <p>
-          Python <br>
-          JavaScript <br>
-          Apex <br>
-        </p>
-      </div>
+        <div class="skill-card">
+            <h3>Salesforce Technologies</h3>
+            <p>
+              • Apex <br>
+              • Lightning Web Components <br>
+              • SOQL <br>
+              • SFDX
+            </p>
+        </div>
 
-      <div class="skill-card">
-        <h3>Salesforce</h3>
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>
+              • HTML5 <br>
+              • CSS3 <br>
+              • Bootstrap 4
+            </p>
+        </div>
 
-        <p>
-          Apex <br>
-          Lightning Web Components <br>
-          SOQL <br>
-          SFDX
-        </p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Web Development</h3>
-
-        <p>
-          HTML5 <br>
-          CSS3 <br>
-          Bootstrap 4 <br>
-        </p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Tools & Platforms</h3>
-
-        <p>
-          GitHub <br>
-          VS Code <br>
-          Workbench <br>
-          Developer Console
-        </p>
-      </div>
+        <div class="skill-card">
+            <h3>Tools & Platforms</h3>
+            <p>
+              • GitHub <br>
+              • VS Code <br>
+              • Workbench <br>
+              • Developer Console
+            </p>
+        </div>
 
     </div>
-
   </section>
 
 
@@ -686,7 +710,7 @@
 
   <footer>
 
-    © 2026 Atharva Singh | Python Developer & Salesforce Developer Portfolio
+    © 2026 Atharva Singh Chandra | Python Developer & Salesforce Developer Portfolio
 
   </footer>
 
