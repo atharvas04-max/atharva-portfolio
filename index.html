@@ -1,775 +1,712 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Atharva Singh Chandra | Salesforce Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atharva Singh Chandra | Salesforce Developer</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-      font-family:'Poppins',sans-serif;
-    }
-
-    body{
-      background:#050505;
-      color:white;
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:'';
-      position:fixed;
-      width:500px;
-      height:500px;
-      background:#ff2d55;
-      filter:blur(180px);
-      top:-100px;
-      left:-100px;
-      opacity:0.4;
-      z-index:-1;
-    }
-
-    body::after{
-      content:'';
-      position:fixed;
-      width:400px;
-      height:400px;
-      background:#3b0a14;
-      filter:blur(180px);
-      bottom:-100px;
-      right:-100px;
-      opacity:0.4;
-      z-index:-1;
-    }
-
-    nav{
-      position:fixed;
-      width:100%;
-      top:0;
-      padding:22px 10%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
-      background:rgba(0,0,0,0.9);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    nav h2{
-      font-size:28px;
-      font-weight:700;
-      background:linear-gradient(to right,#ff3b3b,#7f1d1d);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    nav ul{
-      display:flex;
-      gap:35px;
-      list-style:none;
-    }
-
-    nav ul li a{
-      text-decoration:none;
-      color:white;
-      transition:0.3s;
-      font-size:15px;
-    }
-
-    nav ul li a:hover{
-      color:#ef4444;
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 10%;
-      flex-wrap:wrap;
-      gap:50px;
-    }
-
-    .hero-text{
-      flex:1;
-      min-width:320px;
-    }
-
-    .hero-text h1{
-      font-size:72px;
-      line-height:1.1;
-      margin-bottom:20px;
-    }
-
-    .hero-text h1 span{
-      background:linear-gradient(to right,#ef4444,#7f1d1d);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .typing{
-      font-size:30px;
-      color:#d1d5db;
-      margin-bottom:25px;
-      min-height:45px;
-    }
-
-    .hero-text p{
-      color:#94a3b8;
-      line-height:2;
-      max-width:700px;
-      margin-bottom:35px;
-      font-size:16px;
-    }
-
-    .btns{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:15px 32px;
-      border-radius:15px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.4s;
-    }
-
-    .btn-primary{
-      background:linear-gradient(to right,#dc2626,#7f1d1d);
-      color:white;
-      box-shadow:0 0 25px rgba(37,99,235,0.4);
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-      backdrop-filter:blur(10px);
-    }
-
-    .btn:hover{
-      transform:translateY(-5px);
-    }
-
-    .hero-card{
-      width:360px;
-      padding:35px;
-      border-radius:30px;
-      background:rgba(255,255,255,0.05);
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,0.06);
-      box-shadow:0 0 40px rgba(56,189,248,0.15);
-    }
-
-    .hero-card h3{
-      margin-bottom:25px;
-      color:#ef4444;
-      font-size:26px;
-    }
-
-    .hero-card p{
-      margin:18px 0;
-      color:#d1d5db;
-      font-size:16px;
-    }
-
-    section{
-      padding:120px 10%;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:50px;
-      margin-bottom:70px;
-      background:linear-gradient(to right,#ef4444,#7f1d1d);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .about{
-      text-align:center;
-    }
-
-    .about p{
-      max-width:950px;
-      margin:auto;
-      line-height:2.2;
-      color:#d1d5db;
-      font-size:17px;
-    }
-
-    .skills-section{
-      padding:120px 8%;
-      background:radial-gradient(circle at top left,#4b000c,#000000 45%);
-    }
-
-    .skills-title{
-      text-align:center;
-      font-size:4.5rem;
-      font-weight:800;
-      color:#ff4b4b;
-      margin-bottom:90px;
-      text-shadow:0 0 18px rgba(255,0,0,0.2); 
-    }
-
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:38px;
-    }
-
-    .skill-card{
-      background:rgba(8,8,8,0.96);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:28px;
-      padding:45px 35px;
-      transition:0.4s ease;
-      position:relative;
-      overflow:hidden;
-      min-height:430px; 
-    }
-
-    .skill-card:hover{
-      transform:translateY(-10px);
-      border-color:#ff3b3b;
-      box-shadow:0 0 35px rgba(255,0,0,0.18);
-    }
-
-    .skill-card h3{
-      color:#ff4b4b;
-      font-size:2.2rem;
-      line-height:1.4;
-      margin-bottom:35px;
-      font-weight:700;
-      min-height:110px;
-      display:flex;
-      align-items:flex-start;
-    }
-
-    .skill-card h3::after{
-      content:'';
-      display:block;
-      width:55px;
-      height:3px;
-      background:#ff3b3b;
-      margin-top:15px;
-      border-radius:10px;
-    }
-
-    .skill-card ul{
-      list-style:none;
-      padding:0;
-    }
-
-    .skill-card ul li{
-      color:#d1d5db;
-      font-size:1.18rem;
-      margin-bottom:22px;
-      position:relative;
-      padding-left:22px;
-      line-height:1.8;
-    }
-
-    .skill-card ul li::before{
-      content:'•';
-      position:absolute;
-      left:0;
-      color:#ff3b3b;
-      font-size:1.3rem;
-    }
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:35px;
-    }
-
-    .project-card{
-      padding:35px;
-      border-radius:30px;
-      background:rgba(20,20,20,0.95);
-      border:1px solid rgba(255,255,255,0.08);
-      transition:0.4s;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .project-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 30px rgba(56,189,248,0.15);
-    }
-
-    .project-card h3{
-      color:#ef4444;
-      margin-bottom:20px;
-      font-size:28px;
-    }
-
-    .project-card p{
-      color:#d1d5db;
-      line-height:2;
-    }
-
-    .certifications{
-      text-align:center;
-    }
-
-    .certifications ul{
-      list-style:none;
-      max-width:800px;
-      margin:auto;
-    }
-
-    .certifications li{
-      margin:20px 0;
-      padding:20px;
-      border-radius:15px;
-      background:rgba(18,18,18,0.96);
-      border:1px solid rgba(255,255,255,0.08);
-      color:#d1d5db;
-    }
-
-    .contact{
-      text-align:center;
-    }
-
-    .contact-box{
-      max-width:800px;
-      margin:auto;
-      padding:50px;
-      border-radius:30px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(10px);
-    }
-
-    .contact p{
-      margin:20px 0;
-      font-size:18px;
-      color:#d1d5db;
-    }
-
-    footer{
-      text-align:center;
-      padding:35px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:#94a3b8;
-    }
-
-    @media(max-width:900px){
-
-      .hero{
-        padding-top:120px;
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
       }
 
-      .hero-text h1{
-        font-size:50px;
+      body {
+        background: #050505;
+        color: white;
+        overflow-x: hidden;
       }
 
-      nav{
-        flex-direction:column;
-        gap:20px;
+      body::before {
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        background: #ff2d55;
+        filter: blur(180px);
+        top: -100px;
+        left: -100px;
+        opacity: 0.4;
+        z-index: -1;
       }
 
-      nav ul{
-        gap:18px;
-        flex-wrap:wrap;
-        justify-content:center;
+      body::after {
+        content: "";
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: #3b0a14;
+        filter: blur(180px);
+        bottom: -100px;
+        right: -100px;
+        opacity: 0.4;
+        z-index: -1;
       }
-    }
 
-    html {
-       scroll-behavior: smooth;
-    }
+      nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        padding: 22px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
 
-    .project-card {
-       transition: all 0.4s ease;
-    }
+      nav h2 {
+        font-size: 28px;
+        font-weight: 700;
+        background: linear-gradient(to right, #ff3b3b, #7f1d1d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-    .project-card:hover {
-       transform: translateY(-10px);
-       box-shadow: 0 0 25px rgba(255,0,0,0.25);
-    }
+      nav ul {
+        display: flex;
+        gap: 35px;
+        list-style: none;
+      }
 
-    button,
-    .btn {
-      transition: all 0.3s ease;
-    }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+        font-size: 15px;
+      }
 
-    button:hover,
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255,0,0,0.4);
-    }
+      nav ul li a:hover {
+        color: #ef4444;
+      }
 
-    h1, h2 {
-      text-shadow: 0 0 12px rgba(255,0,0,0.2);
-    }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10%;
+        flex-wrap: wrap;
+        gap: 50px;
+      }
 
-  </style>
+      .hero-text {
+        flex: 1;
+        min-width: 320px;
+      }
 
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+      .hero-text h1 {
+        font-size: 72px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
 
-</head>
+      .hero-text h1 span {
+        background: linear-gradient(to right, #ef4444, #7f1d1d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-<body>
+      .typing {
+        font-size: 30px;
+        color: #d1d5db;
+        margin-bottom: 25px;
+        min-height: 45px;
+      }
 
-  <nav>
+      .hero-text p {
+        color: #94a3b8;
+        line-height: 2;
+        max-width: 700px;
+        margin-bottom: 35px;
+        font-size: 16px;
+      }
 
-    <h2>Atharva Singh Chandra</h2>
+      .btns {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
 
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      .btn {
+        padding: 15px 32px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.4s;
+      }
 
-  </nav>
+      .btn-primary {
+        background: linear-gradient(to right, #dc2626, #7f1d1d);
+        color: white;
+        box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+      }
 
-  <section class="hero">
+      .btn-secondary {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        backdrop-filter: blur(10px);
+      }
 
-    <div class="hero-text">
+      .btn:hover {
+        transform: translateY(-5px);
+      }
 
-      <h1>
-        Hi, I'm <span>Atharva Singh Chandra</span>
-      </h1>
+      .hero-card {
+        width: 360px;
+        padding: 35px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+      }
 
-      <div class="typing">
-        <span id="typed"></span>
-      </div>
+      .hero-card h3 {
+        margin-bottom: 25px;
+        color: #ef4444;
+        font-size: 26px;
+      }
 
-      <p>
-        Final-year B.Tech CS(AI) student passionate about Salesforce Development,
-        Python, Apex, Lightning Web Components, SOQL, and modern web technologies.
+      .hero-card p {
+        margin: 18px 0;
+        color: #d1d5db;
+        font-size: 16px;
+      }
 
-        I love building scalable applications and solving real-world technical problems.
-      </p>
+      section {
+        padding: 120px 10%;
+      }
 
-      <div class="btns">
+      .section-title {
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 70px;
+        background: linear-gradient(to right, #ef4444, #7f1d1d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        <a href="#projects" class="btn btn-primary">
-          View Projects
-        </a>
+      .about {
+        text-align: center;
+      }
 
-        <a href="resume.pdf" download class="btn btn-secondary">
-          Download Resume
-        </a>
+      .about p {
+        max-width: 950px;
+        margin: auto;
+        line-height: 2.2;
+        color: #d1d5db;
+        font-size: 17px;
+      }
 
-      </div>
+      .skills-section {
+        padding: 120px 8%;
+        background: radial-gradient(circle at top left, #4b000c, #000000 45%);
+      }
 
-    </div>
+      .skills-title {
+        text-align: center;
+        font-size: 4.5rem;
+        font-weight: 800;
+        color: #ff4b4b;
+        margin-bottom: 90px;
+        text-shadow: 0 0 18px rgba(255, 0, 0, 0.2);
+      }
 
-    <div class="hero-card">
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 35px;
+        margin-top: 50px;
+      }
 
-      <h3>Quick Overview</h3>
+      .skill-card {
+        background: rgba(10, 10, 10, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 40px 35px;
+        transition: 0.4s ease;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
 
-      <p>🎓 B.Tech CSE(AI)</p>
+      .skill-card:hover {
+        transform: translateY(-10px);
+        border-color: #ff3b3b;
+        box-shadow: 0 0 35px rgba(255, 0, 0, 0.25);
+      }
 
-      <p>💻 Salesforce Developer</p>
+      .skill-card h3 {
+        color: #ff4d4d;
+        font-size: 2rem;
+        margin-bottom: 28px;
+        font-weight: 700;
+        position: relative;
+      }
 
-      <p>⚡ Apex • LWC • SOQL</p>
+      .skill-card h3::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #ff3b3b;
+        margin-top: 12px;
+        border-radius: 10px;
+      }
 
-      <p>🐍 Python Developer</p>
+      .skill-card p {
+        color: #d1d5db;
+        line-height: 2.2;
+        font-size: 1.1rem;
+      }
 
-      <p>🚀 Open to Developer Roles</p>
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+      }
 
-      <p>📍 Uttar Pradesh, India</p>
+      .project-card {
+        padding: 35px;
+        border-radius: 30px;
+        background: rgba(20, 20, 20, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.4s;
+        position: relative;
+        overflow: hidden;
+      }
 
-    </div>
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+      }
 
-  </section>
+      .project-card h3 {
+        color: #ef4444;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
 
-  <section id="about" class="about" data-aos="fade-right">
+      .project-card p {
+        color: #d1d5db;
+        line-height: 2;
+      }
 
-    <h2 class="section-title">About Me</h2>
+      .certifications {
+        text-align: center;
+      }
 
-    <p>
-        I am a final-year B.Tech Computer Science & Engineering (Artificial Intelligence)
-        student with a strong interest in Salesforce Development, CRM solutions,
-        and modern software engineering.
+      .certifications ul {
+        list-style: none;
+        max-width: 800px;
+        margin: auto;
+      }
 
-        My primary focus is on building scalable and user-friendly applications using
-        Apex, Lightning Web Components (LWC), SOQL, Python, and modern web technologies.
-        I enjoy transforming ideas into practical solutions that improve efficiency,
-        automation, and user experience.
+      .certifications li {
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 15px;
+        background: rgba(18, 18, 18, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #d1d5db;
+      }
 
-        Over time, I have worked on projects including a Salesforce-based Customer Lead Tracker CRM,
-        a real-time Driver Drowsiness Detection System using OpenCV,
-        and a Building Management System developed with Object-Oriented Programming concepts.
+      .contact {
+        text-align: center;
+      }
 
-        I am continuously improving my technical skills through hands-on development,
-        problem-solving, and real-world project building while actively exploring
-        opportunities in Salesforce Development and Software Engineering.
-    </p>
+      .contact-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 50px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+      }
 
-  </section>
+      .contact p {
+        margin: 20px 0;
+        font-size: 18px;
+        color: #d1d5db;
+      }
 
-<section id="skills" class="skills-section">
+      footer {
+        text-align: center;
+        padding: 35px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: #94a3b8;
+      }
 
-    <h2 class="skills-title">Technical Skills</h2>
+      @media (max-width: 900px) {
+        .hero {
+          padding-top: 120px;
+        }
 
-    <div class="skills-grid">
+        .hero-text h1 {
+          font-size: 50px;
+        }
 
-        <div class="skill-card">
-            <h3>Programming</h3>
+        nav {
+          flex-direction: column;
+          gap: 20px;
+        }
 
-            <ul>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>Apex</li>
-            </ul>
-        </div>
+        nav ul {
+          gap: 18px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
 
-        <div class="skill-card">
-            <h3>Salesforce</h3>
+      html {
+        scroll-behavior: smooth;
+      }
 
-            <ul>
-                <li>Apex</li>
-                <li>Lightning Web Components</li>
-                <li>SOQL</li>
-                <li>SFDX</li>
-            </ul>
-        </div>
+      .project-card {
+        transition: all 0.4s ease;
+      }
 
-        <div class="skill-card">
-            <h3>Web Development</h3>
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+      }
 
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Bootstrap 4</li>
-            </ul>
-        </div>
+      button,
+      .btn {
+        transition: all 0.3s ease;
+      }
 
-        <div class="skill-card">
-            <h3>Tools & Platforms</h3>
+      button:hover,
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+      }
 
-            <ul>
-                <li>GitHub</li>
-                <li>VS Code</li>
-                <li>Workbench</li>
-                <li>Developer Console</li>
-            </ul>
-        </div>
+      h1,
+      h2 {
+        text-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+      }
+    </style>
 
-    </div>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
 
-</section>
-
-
-<section id="projects" data-aos="fade-up">
-
-  <h2 class="section-title">Projects</h2>
-
-  <div class="projects-grid">
-
-    <div class="project-card">
-
-      <h3>Drowsiness Detection System</h3>
+  <body>
+    <nav>
+      <h2>Atharva Singh Chandra</h2>
 
       <ul>
-        <li>
-          Developed a real-time driver drowsiness detection system using Python,
-          OpenCV, and facial landmark detection techniques.
-        </li>
-
-        <li>
-          Implemented eye-closure tracking with instant audio-visual alerts
-          to improve road safety and reduce accident risks caused by fatigue.
-        </li>
-
-        <li>
-          Optimized real-time video processing performance for accurate
-          low-latency monitoring under continuous webcam input.
-        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
 
-      <p>
-        <strong>Tech Stack:</strong> Python, OpenCV
-      </p>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hi, I'm <span>Atharva Singh Chandra</span></h1>
 
-    </div>
+        <div class="typing">
+          <span id="typed"></span>
+        </div>
 
-    <div class="project-card">
+        <p>
+          Final-year B.Tech CS(AI) student passionate about Salesforce
+          Development, Python, Apex, Lightning Web Components, SOQL, and modern
+          web technologies. I love building scalable applications and solving
+          real-world technical problems.
+        </p>
 
-      <h3>Building Management System</h3>
+        <div class="btns">
+          <a href="#projects" class="btn btn-primary"> View Projects </a>
 
-      <ul>
-        <li>
-          Developed a Building Management System using Python and
-          Object-Oriented Programming principles.
-        </li>
-
-        <li>
-          Designed modules for tenant management, maintenance tracking,
-          billing operations, and administrative workflows.
-        </li>
-
-        <li>
-          Improved operational organization by creating a structured and
-          user-friendly management system for daily building activities.
-        </li>
-      </ul>
-
-      <p>
-        <strong>Tech Stack:</strong> Python, OOP
-      </p>
-
-    </div>
-
-    <div class="project-card">
-
-      <h3>Customer Lead Tracker | Salesforce CRM</h3>
-
-      <ul>
-        <li>
-          Designed and developed a Salesforce-based CRM application focused on
-          improving customer lead management and workflow efficiency.
-        </li>
-
-        <li>
-          Implemented interactive features using Apex, Lightning Web Components (LWC),
-          SOQL, and Flow Builder for business process automation.
-        </li>
-
-        <li>
-          Utilized SFDX and Git for development workflow, version control,
-          and scalable project management.
-        </li>
-      </ul>
-
-      <p>
-        <strong>Tech Stack:</strong>
-        Apex, LWC, SOQL, Flow Builder, SFDX, Git
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-  <section id="certifications" class="certifications">
-
-    <h2 class="section-title">Certifications</h2>
-
-    <ul>
-
-      <li>Salesforce Agentblazer Champion Badge</li>
-
-      <li>Complete Python Programming — Udemy</li>
-
-      <li>Programming Fundamentals with Python — Infosys Springboard</li>
-
-      <li>HTML5 — Infosys Springboard</li>
-
-      <li>AWS Cloud Certification (Foundation Level) — Amazon Web Services</li>
-
-      <li>Python Demonstration for Practice — Udemy</li>
-
-    </ul>
-
-  </section>
-
-  <section id="contact" class="contact" data-aos="zoom-in">
-
-    <h2 class="section-title">Contact Me</h2>
-
-    <div class="contact-box">
-
-      <p>
-        📧
-        <a href="mailto:satharva709@gmail.com"
-           target="_blank"
-           style="color:#ef4444;text-decoration:none;font-weight:500;">
-           satharva709@gmail.com
-        </a>
-      </p>
-
-      <p>
-        📱
-        <a href="tel:+919569844597"
-           style="color:#ef4444;text-decoration:none;">
-           +91 95698 44597
+          <a href="resume.pdf" download class="btn btn-secondary">
+            Download Resume
           </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Quick Overview</h3>
+
+        <p>🎓 B.Tech CSE(AI)</p>
+
+        <p>💻 Salesforce Developer</p>
+
+        <p>⚡ Apex • LWC • SOQL</p>
+
+        <p>🐍 Python Developer</p>
+
+        <p>🚀 Open to Developer Roles</p>
+
+        <p>📍 Uttar Pradesh, India</p>
+      </div>
+    </section>
+
+    <section id="about" class="about" data-aos="fade-right">
+      <h2 class="section-title">About Me</h2>
+
+      <p>
+        I am a final-year B.Tech Computer Science & Engineering (Artificial
+        Intelligence) student with a strong interest in Salesforce Development,
+        CRM solutions, and modern software engineering. My primary focus is on
+        building scalable and user-friendly applications using Apex, Lightning
+        Web Components (LWC), SOQL, Python, and modern web technologies. I enjoy
+        transforming ideas into practical solutions that improve efficiency,
+        automation, and user experience. Over time, I have worked on projects
+        including a Salesforce-based Customer Lead Tracker CRM, a real-time
+        Driver Drowsiness Detection System using OpenCV, and a Building
+        Management System developed with Object-Oriented Programming concepts. I
+        am continuously improving my technical skills through hands-on
+        development, problem-solving, and real-world project building while
+        actively exploring opportunities in Salesforce Development and Software
+        Engineering.
       </p>
+    </section>
 
-      <p>📍 Uttar Pradesh, India</p>
+    <section id="skills" class="skills-section">
+      <h2 class="skills-title">Technical Skills</h2>
 
-      <p>
-        💼 LinkedIn:
-        <a href="https://www.linkedin.com/in/atharva-singh04/"
-           target="_blank"
-           style="color:#ef4444;text-decoration:none;">
-           Visit Profile
-        </a>
-     </p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <p>
+            • Python <br />
+            • JavaScript <br />
+            • Apex
+          </p>
+        </div>
 
-      <p>
-         💻 GitHub:
-         <a href="https://github.com/atharvas04-max"
-         target="_blank"
-         style="color:#ef4444;text-decoration:none;">
-         Visit GitHub
-        </a>
-     </p>
+        <div class="skill-card">
+          <h3>Salesforce</h3>
+          <p>
+            • Apex <br />
+            • Lightning Web Components <br />
+            • SOQL <br />
+            • SFDX
+          </p>
+        </div>
 
-    </div>
+        <div class="skill-card">
+          <h3>Web Development</h3>
+          <p>
+            • HTML5 <br />
+            • CSS3 <br />
+            • Bootstrap 4
+          </p>
+        </div>
 
-  </section>
+        <div class="skill-card">
+          <h3>Tools & Platforms</h3>
+          <p>
+            • GitHub <br />
+            • VS Code <br />
+            • Workbench <br />
+            • Developer Console
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
+    <section id="projects" data-aos="fade-up">
+      <h2 class="section-title">Projects</h2>
 
-    © 2026 Atharva Singh Chandra | Python Developer & Salesforce Developer Portfolio
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Drowsiness Detection System</h3>
 
-  </footer>
+          <ul>
+            <li>
+              Developed a real-time driver drowsiness detection system using
+              Python, OpenCV, and facial landmark detection techniques.
+            </li>
 
-  <script>
+            <li>
+              Implemented eye-closure tracking with instant audio-visual alerts
+              to improve road safety and reduce accident risks caused by
+              fatigue.
+            </li>
 
-    var typed = new Typed("#typed", {
+            <li>
+              Optimized real-time video processing performance for accurate
+              low-latency monitoring under continuous webcam input.
+            </li>
+          </ul>
 
-      strings: [
+          <p><strong>Tech Stack:</strong> Python, OpenCV</p>
+        </div>
 
-        "Salesforce Developer",
-        "Python Developer",
-        "Apex & LWC Enthusiast",
-        "Future CRM Engineer"
+        <div class="project-card">
+          <h3>Building Management System</h3>
 
-      ],
+          <ul>
+            <li>
+              Developed a Building Management System using Python and
+              Object-Oriented Programming principles.
+            </li>
 
-      typeSpeed: 60,
-      backSpeed: 40,
-      backDelay: 1500,
-      loop:true
+            <li>
+              Designed modules for tenant management, maintenance tracking,
+              billing operations, and administrative workflows.
+            </li>
 
-    });
+            <li>
+              Improved operational organization by creating a structured and
+              user-friendly management system for daily building activities.
+            </li>
+          </ul>
 
-  </script>
+          <p><strong>Tech Stack:</strong> Python, OOP</p>
+        </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <div class="project-card">
+          <h3>Customer Lead Tracker | Salesforce CRM</h3>
 
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+          <ul>
+            <li>
+              Designed and developed a Salesforce-based CRM application focused
+              on improving customer lead management and workflow efficiency.
+            </li>
 
-</body>
+            <li>
+              Implemented interactive features using Apex, Lightning Web
+              Components (LWC), SOQL, and Flow Builder for business process
+              automation.
+            </li>
+
+            <li>
+              Utilized SFDX and Git for development workflow, version control,
+              and scalable project management.
+            </li>
+          </ul>
+
+          <p>
+            <strong>Tech Stack:</strong>
+            Apex, LWC, SOQL, Flow Builder, SFDX, Git
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+      <h2 class="section-title">Certifications</h2>
+
+      <ul>
+        <li>Salesforce Agentblazer Champion Badge</li>
+
+        <li>Complete Python Programming — Udemy</li>
+
+        <li>Programming Fundamentals with Python — Infosys Springboard</li>
+
+        <li>HTML5 — Infosys Springboard</li>
+
+        <li>
+          AWS Cloud Certification (Foundation Level) — Amazon Web Services
+        </li>
+
+        <li>Python Demonstration for Practice — Udemy</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact" data-aos="zoom-in">
+      <h2 class="section-title">Contact Me</h2>
+
+      <div class="contact-box">
+        <p>
+          📧
+          <a
+            href="mailto:satharva709@gmail.com"
+            target="_blank"
+            style="color: #ef4444; text-decoration: none; font-weight: 500"
+          >
+            satharva709@gmail.com
+          </a>
+        </p>
+
+        <p>
+          📱
+          <a
+            href="tel:+919569844597"
+            style="color: #ef4444; text-decoration: none"
+          >
+            +91 95698 44597
+          </a>
+        </p>
+
+        <p>📍 Uttar Pradesh, India</p>
+
+        <p>
+          💼 LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/atharva-singh04/"
+            target="_blank"
+            style="color: #ef4444; text-decoration: none"
+          >
+            Visit Profile
+          </a>
+        </p>
+
+        <p>
+          💻 GitHub:
+          <a
+            href="https://github.com/atharvas04-max"
+            target="_blank"
+            style="color: #ef4444; text-decoration: none"
+          >
+            Visit GitHub
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Atharva Singh Chandra | Python Developer & Salesforce Developer
+      Portfolio
+    </footer>
+
+    <script>
+      var typed = new Typed("#typed", {
+        strings: [
+          "Salesforce Developer",
+          "Python Developer",
+          "Apex & LWC Enthusiast",
+          "Future CRM Engineer",
+        ],
+
+        typeSpeed: 60,
+        backSpeed: 40,
+        backDelay: 1500,
+        loop: true,
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+  </body>
 </html>
