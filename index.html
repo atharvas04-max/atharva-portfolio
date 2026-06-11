@@ -407,20 +407,38 @@
         text-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
       }
 
-      .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 20px;
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
       }
 
-      .skills-list span {
-        background: #f3f4f6;
-        color: #333;
-        padding: 8px 14px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 500;
+      .skill-card {
+        background: rgba(255, 77, 77, 0.05);
+        border: 1px solid #ff4d4d;
+        border-radius: 15px;
+        padding: 20px;
+        transition: 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+      }
+
+      .skill-card h3 {
+        color: #ff4d4d;
+        margin-bottom: 15px;
+      }
+
+      .skill-card ul {
+        padding-left: 20px;
+      }
+
+      .skill-card li {
+        margin-bottom: 8px;
+        color: #ffffff;
       }
     </style>
 
@@ -509,70 +527,82 @@
       <div class="skills-grid">
         <div class="skill-card">
           <h3>Programming Languages</h3>
-          <div class="skills-list">
-            <span>Java</span>
-            <span>Apex</span>
-            <span>JavaScript</span>
-            <span>Python</span>
-            <span>SQL</span>
-          </div>
+          <ul>
+            <li>Java</li>
+            <li>Apex</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
 
+        <div class="skill-card">
           <h3>Salesforce Technologies</h3>
-          <div class="skills-list">
-            <span>Apex</span>
-            <span>Lightning Web Components (LWC)</span>
-            <span>SOQL</span>
-            <span>SOSL</span>
-            <span>Salesforce CLI</span>
-            <span>Developer Console</span>
-            <span>Workbench</span>
-            <span>Sales Cloud</span>
-            <span>Einstein GPT</span>
-            <span>Agentforce</span>
-          </div>
+          <ul>
+            <li>Apex</li>
+            <li>Lightning Web Components (LWC)</li>
+            <li>SOQL</li>
+            <li>SOSL</li>
+            <li>Salesforce CLI</li>
+            <li>Developer Console</li>
+            <li>Workbench</li>
+            <li>Sales Cloud</li>
+            <li>Einstein GPT</li>
+            <li>Agentforce</li>
+          </ul>
+        </div>
 
+        <div class="skill-card">
           <h3>Java Concepts</h3>
-          <div class="skills-list">
-            <span>Object-Oriented Programming</span>
-            <span>Collections Framework</span>
-            <span>Exception Handling</span>
-            <span>File Handling</span>
-            <span>Arrays</span>
-            <span>Strings</span>
-          </div>
+          <ul>
+            <li>Object-Oriented Programming</li>
+            <li>Collections Framework</li>
+            <li>Exception Handling</li>
+            <li>File Handling</li>
+            <li>Arrays</li>
+            <li>Strings</li>
+          </ul>
+        </div>
 
+        <div class="skill-card">
           <h3>Web Technologies</h3>
-          <div class="skills-list">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>Bootstrap 4</span>
-          </div>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Bootstrap 4</li>
+          </ul>
+        </div>
 
+        <div class="skill-card">
           <h3>AI / Machine Learning</h3>
-          <div class="skills-list">
-            <span>Python</span>
-            <span>NumPy</span>
-            <span>Pandas</span>
-            <span>OpenCV</span>
-            <span>Dlib</span>
-            <span>Matplotlib</span>
-          </div>
+          <ul>
+            <li>Python</li>
+            <li>NumPy</li>
+            <li>Pandas</li>
+            <li>OpenCV</li>
+            <li>Dlib</li>
+            <li>Matplotlib</li>
+          </ul>
+        </div>
 
+        <div class="skill-card">
           <h3>Developer Tools</h3>
-          <div class="skills-list">
-            <span>VS Code</span>
-            <span>Eclipse IDE</span>
-            <span>IntelliJ IDEA</span>
-            <span>Git</span>
-            <span>GitHub</span>
-          </div>
+          <ul>
+            <li>VS Code</li>
+            <li>Eclipse IDE</li>
+            <li>IntelliJ IDEA</li>
+            <li>Git</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
 
+        <div class="skill-card">
           <h3>AI Tools</h3>
-          <div class="skills-list">
-            <span>ChatGPT</span>
-            <span>Claude</span>
-            <span>GitHub Copilot</span>
-          </div>
+          <ul>
+            <li>ChatGPT</li>
+            <li>Claude</li>
+            <li>GitHub Copilot</li>
+          </ul>
         </div>
       </div>
     </section>
